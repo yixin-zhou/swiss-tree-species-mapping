@@ -1,0 +1,14 @@
+DINOv3 pretrained backbone
+
+Download the ViT-H+/16 model pretrained on LVD-1689M from the official DINOv3 project:
+https://github.com/facebookresearch/dinov3#pretrained-models
+
+Follow the official instructions to request access and download the PyTorch checkpoint.
+Rename the downloaded file to:
+    dinov3_vith16plus.pth
+
+Place it directly in this directory:
+    checkpoints/dinov3_vith16plus.pth
+
+This is the local filename used by configs/main.yaml; the original download filename may differ.
+The pretrained weights are not included in this repository.

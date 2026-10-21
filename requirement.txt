@@ -1,0 +1,24 @@
+# Runtime packages exported from the training environment; Python 3.11.
+# PyTorch CUDA 13.0 wheels; other packages are resolved from PyPI.
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+torch==2.11.0
+torchvision==0.26.0
+spconv-cu124==2.3.8
+cumm-cu124==0.7.11
+numpy==2.4.6
+pandas==2.3.3
+h5py==3.16.0
+scipy==1.17.1
+scikit-learn==1.8.0
+omegaconf==2.3.0
+tqdm==4.67.3
+pyproj==3.7.2
+matplotlib==3.9.1
+timm==1.0.27
+einops==0.8.2
+Pillow==12.2.0
+PyYAML==6.0.3
+
+# Optional experiment tracking (disabled by default):
+# wandb==0.27.0

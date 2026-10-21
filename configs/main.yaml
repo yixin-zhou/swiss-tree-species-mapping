@@ -1,0 +1,43 @@
+# Reference model: final 11-class basal-area composition, including Other.
+experiment:
+  name: reference_model
+
+path:
+  hdf5: data/training  # authorized HDF5 files and index.csv
+  rgb_pretrained_weights: checkpoints/dinov3_vith16plus.pth
+
+seed: 42
+device: cuda
+dataloader:
+  batch_size: 4  # train.py adjusts per GPU to keep global batch size 4
+  num_workers: 6
+
+optimizer:
+  lr: 1.0e-4
+  weight_decay: 0.05
+scheduler:
+  name: cosine
+  min_lr: 1.0e-6
+
+losses:
+  stand_ce: {enabled: true, weight: 1.0}
+  leaf_kl: {enabled: true, weight: 0.2}
+  leaf_l1: {enabled: true, weight: 1.0}
+  species_kl: {enabled: true, weight: 0.2}
+  species_l1: {enabled: true, weight: 1.0}
+  leaf_species_consistency: {enabled: true, weight: 0.1}
+
+augmentation:
+  geometric: true
+sampler:
+  rare_class_ids: [2, 3, 4, 6, 7, 8, 9]
+  presence_threshold: 0.05
+  rare_species_weight: 1.5
+
+cross_validation:
+  num_folds: 5
+
+output:
+  root: outputs/experiments
+logging:
+  use_wandb: false

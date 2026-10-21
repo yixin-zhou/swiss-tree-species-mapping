@@ -1,0 +1,33 @@
+# Authorized data, weights and local experiment products.
+/data/
+/datasets/
+/checkpoints/*
+!/checkpoints/DOWNLOAD.txt
+/outputs/
+/runs/
+/logs/
+/wandb/
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+*.tif
+*.tiff
+*.las
+*.laz
+*.gpkg
+*.parquet
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+.DS_Store
+
+# Local rendered documents.
+*.pdf
